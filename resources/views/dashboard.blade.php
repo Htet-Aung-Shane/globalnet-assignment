@@ -17,11 +17,13 @@
                         <x-heroicon-o-chevron-right class="h-4 w-4 ml-auto mr-2"/>
                     </li>
                     <hr class="border-gray-700 my-4">
+                    @active
                     <li class="flex items-center mt-2">
                         <x-heroicon-o-document-chart-bar class="h-5 w-5 ml-4 mr-4"/>
-                        <a href="" class="block px-4 py-2 hover:bg-gray-700">DRS Form</a>
+                        <a href="{{ route('student.list') }}" class="block px-4 py-2 hover:bg-gray-700">Students</a>
                         <x-heroicon-o-chevron-right class="h-4 w-4 ml-auto mr-2"/>
                     </li>
+                    @endactive
                     @admin
                     <li class="flex items-center mt-2 relative">
                         <x-heroicon-o-user-group class="h-5 w-5 ml-4 mr-4"/>
@@ -44,7 +46,7 @@
                     @admin
                     <li class="flex items-center mt-2">
                         <x-heroicon-o-cog-8-tooth class="h-5 w-5 ml-4 mr-4"/>
-                        <a href="" class="block px-4 py-2 hover:bg-gray-700">Configuration</a>
+                        <a href="" class="block px-4 py-2 hover:bg-gray-700">API</a>
                         <x-heroicon-o-chevron-down class="h-4 w-4 ml-auto mr-2"/>
                     </li>
                     @endadmin
@@ -54,7 +56,7 @@
                 <!-- Footer -->
                 <hr class="border-gray-700 my-4">
                 <div class="flex items-center">
-                    <p class="text-xs text-gray-400 px-4">Developed By OSD Team</p>
+                    <p class="text-xs text-gray-400 px-4">Developed By Htet Aung Shane</p>
                 </div>
                 
             </div>

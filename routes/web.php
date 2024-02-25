@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::middleware('auth','active')->group(function () {
-    
+    Route::get('/dashboard/student', [StudentController::class, 'index'])->name('student.list');
+    Route::get('/dashboard/student/create', [StudentController::class, 'create'])->name('student.create');
+    Route::get('/dashboard/student/edit', [StudentController::class, 'edit'])->name('student.edit');
+    Route::patch('/dashboard/student/edit/action', [StudentController::class, 'update'])->name('student.edit.action');
+    Route::get('/dashboard/student/delete', [StudentController::class, 'deleteAction'])->name('student.delete');
+    Route::post('/dashboard/student/create/action', [StudentController::class, 'createAction'])->name('student.create.action');
 });
 Route::middleware('auth','active','admin')->group(function () {
     Route::get('/dashboard/user', [UserController::class, 'index'])->name('user.list');
